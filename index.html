@@ -1,0 +1,3573 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>青苗中学 - 每一株青苗，终将成材</title>
+    <link rel="icon" href="https://i.postimg.cc/7hjCtL7m/xiao-hui.png" type="image/png">
+    <link rel="stylesheet" href="https://i.postimg.cc/7hjCtL7m/xiao-hui.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Microsoft YaHei', 'Segoe UI', sans-serif;
+        }
+        
+        body {
+            background-color: #f8fdfc;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.92);
+            z-index: -1;
+        }
+        
+        .main-nav {
+            background: linear-gradient(135deg, #0a4d4d 0%, #1d7373 100%);
+            box-shadow: 0 4px 20px rgba(0, 80, 80, 0.15);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            height: 70px;
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            width: 100%;
+            margin: 0 auto;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .nav-logo-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .nav-logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid rgba(255, 255, 255, 0.9);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            background-color: white
+        }
+
+        .nav-logo img { 
+            width: 100%;
+            height: 100%; 
+            object-fit: cover; 
+        }
+
+        .nav-logo-text h2 {
+            color: white;
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 2px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        
+        .nav-logo-text p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 12px;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            height: 100%;
+        }
+        
+        .nav-item {
+            padding: 0 25px;
+            color: rgba(255, 255, 255, 0.95);
+            text-decoration: none;
+            font-size: 16px;
+            transition: all 0.3s;
+            position: relative;
+            display: flex;
+            align-items: center;
+            height: 100%;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+        
+        .nav-item:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+            color: white;
+        }
+        
+        .nav-item.active {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-weight: 600;
+        }
+        
+        .nav-item.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: #6cd6d6;
+        }
+        
+        .header-banner {
+            position: relative;
+            height: 400px;
+            width: 100%;
+            overflow: hidden;
+            background: linear-gradient(rgba(10, 77, 77, 0.85), rgba(10, 77, 77, 0.9));
+        }
+        
+        .banner-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+            opacity: 0.25;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .school-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .school-logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid rgba(255, 255, 255, 0.9);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            background-color: white;
+        }
+        
+        .school-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .school-name {
+            color: white;
+        }
+        
+        .school-name h1 {
+            font-size: 32px;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .school-name p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        
+        .header-search-container {
+            position: relative;
+            width: 400px;
+        }
+        
+        .search-box {
+            position: relative;
+            width: 100%;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 14px 20px;
+            padding-right: 50px;
+            border: none;
+            border-radius: 30px;
+            font-size: 15px;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            color: #333;
+            transition: all 0.3s;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            background-color: white;
+        }
+        
+        .search-button {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, #1d7373, #0a4d4d);
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 18px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+        
+        .search-button:hover {
+            background: linear-gradient(135deg, #0a4d4d, #1d7373);
+            transform: translateY(-50%) scale(1.05);
+        }
+
+        .banner-main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: white;
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .banner-title {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 600;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            line-height: 1.2;
+        }
+        
+        .banner-subtitle {
+            font-size: 24px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 80, 80, 0.08);
+            padding: 40px 30px;
+        }
+        
+        .section-title {
+            color: #0a4d4d;
+            font-size: 32px;
+            padding-bottom: 10px;
+            margin-bottom: 35px;
+            border-bottom: 3px solid #1d7373;
+            display: inline-block;
+            font-weight: 600;
+        }
+        
+        .notice-section {
+            margin-bottom: 70px;
+        }
+        
+        .notice-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .notice-item {
+            background-color: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 80, 80, 0.08);
+            transition: all 0.3s;
+            border-left: 5px solid #1d7373;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            border-top: 1px solid #f0f9f9;
+        }
+        
+        .notice-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 80, 80, 0.12);
+        }
+        
+        .notice-item h3 {
+            color: #0a4d4d;
+            font-size: 20px;
+            margin-bottom: 12px;
+            line-height: 1.4;
+            font-weight: 600;
+        }
+        
+        .notice-date {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 15px;
+            background-color: #f0f9f9;
+            padding: 5px 10px;
+            border-radius: 4px;
+            display: inline-block;
+        }
+        
+        .notice-summary {
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.7;
+            flex-grow: 1;
+            font-size: 15px;
+            padding: 15px 0;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .notice-tag {
+            display: inline-block;
+            background-color: #e6f3f3;
+            color: #1d7373;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .read-more {
+            display: inline-block;
+            color: white;
+            background: linear-gradient(135deg, #1d7373, #0a4d4d);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 12px 24px;
+            border-radius: 6px;
+            transition: all 0.3s;
+            margin-top: 15px;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            font-size: 15px;
+            box-shadow: 0 4px 10px rgba(29, 115, 115, 0.2);
+        }
+        
+        .read-more:hover {
+            background: linear-gradient(135deg, #0a4d4d, #1d7373);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(29, 115, 115, 0.3);
+        }
+        
+        .graduates-section {
+            margin-bottom: 70px;
+        }
+        
+        .graduates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .graduate-card {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 80, 80, 0.08);
+            transition: all 0.3s;
+            border: 1px solid #f0f9f9;
+        }
+        
+        .graduate-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 80, 80, 0.12);
+        }
+        
+        .graduate-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .graduate-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .graduate-card:hover .graduate-img img {
+            transform: scale(1.05);
+        }
+        
+        .graduate-info {
+            padding: 20px;
+        }
+        
+        .graduate-name {
+            color: #0a4d4d;
+            font-size: 20px;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .graduate-major {
+            color: #1d7373;
+            font-size: 16px;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+        
+        .graduate-desc {
+            color: #555;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        footer {
+            background-color: rgba(10, 77, 77, 0.95);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 80px;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-logo {
+            font-size: 40px;
+            color: #6cd6d6;
+            margin-bottom: 15px;
+        }
+        
+        .footer-content h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        .footer-content p {
+            margin-bottom: 15px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+        
+        .copyright {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        
+        .disclaimer {
+            margin-top: 15px;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.6);
+            font-style: italic;
+        }
+        
+        .article-page, .search-results-page {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 0 20px;
+            display: none;
+        }
+        
+        .article-header {
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #1d7373;
+        }
+        
+        .article-title {
+            color: #0a4d4d;
+            font-size: 36px;
+            margin-bottom: 15px;
+            line-height: 1.3;
+            font-weight: 600;
+        }
+        
+        .article-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #666;
+            font-size: 16px;
+        }
+        
+        .article-content {
+            background-color: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 8px 25px rgba(0, 80, 80, 0.08);
+            line-height: 1.8;
+            font-size: 17px;
+            margin-bottom: 40px;
+        }
+        
+        .article-content p {
+            margin-bottom: 20px;
+        }
+        
+        .article-content ul, .article-content ol {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+        
+        .article-content li {
+            margin-bottom: 10px;
+        }
+        
+        .back-to-home {
+            display: inline-block;
+            color: #1d7373;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 40px;
+            padding: 12px 25px;
+            border: 2px solid #1d7373;
+            border-radius: 6px;
+            transition: all 0.3s;
+            background-color: white;
+        }
+        
+        .back-to-home:hover {
+            background-color: #1d7373;
+            color: white;
+        }
+        
+        .search-header {
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #1d7373;
+        }
+        
+        .search-title {
+            color: #0a4d4d;
+            font-size: 32px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .search-query {
+            color: #666;
+            font-size: 18px;
+            font-style: italic;
+        }
+        
+        .search-results {
+            background-color: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 8px 25px rgba(0, 80, 80, 0.08);
+            margin-bottom: 40px;
+        }
+        
+        .search-result-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .search-result-item {
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+            transition: background-color 0.3s;
+        }
+        
+        .search-result-item:hover {
+            background-color: rgba(230, 243, 243, 0.3);
+        }
+        
+        .search-result-item:last-child {
+            border-bottom: none;
+        }
+        
+        .search-result-item a {
+            color: #1d7373;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 600;
+            display: block;
+            padding: 10px 15px;
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+        
+        .search-result-item a:hover {
+            background-color: #f0f9f9;
+            color: #0a4d4d;
+            padding-left: 20px;
+        }
+        
+        .search-result-item .result-date {
+            color: #999;
+            font-size: 14px;
+            margin-top: 5px;
+            margin-left: 15px;
+        }
+        
+        .result-description {
+            color: #666;
+            font-size: 15px;
+            margin-top: 5px;
+            margin-left: 15px;
+            line-height: 1.5;
+        }
+        
+        .article-image-container {
+            width: 100%;
+            margin: 30px 0;
+            position: relative;
+        }
+    
+        
+        .article-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        
+        .article-image:hover img {
+            transform: scale(1.02);
+        }
+        
+        .image-caption {
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+            margin-top: 10px;
+            padding: 8px 12px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+            border-left: 3px solid #1d7373;
+        }
+        
+        .results-count {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 25px;
+            padding: 8px 15px;
+            background-color: #f0f9f9;
+            border-radius: 6px;
+            display: inline-block;
+        }
+        
+        .no-results {
+            text-align: center;
+            padding: 60px 30px;
+        }
+        
+        .no-results-icon {
+            font-size: 60px;
+            color: #ddd;
+            margin-bottom: 20px;
+        }
+        
+        .no-results h3 {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+        
+        .no-results p {
+            color: #888;
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+        
+        .encrypted-file {
+            background-color: #fff9e6;
+            border: 2px dashed #e6a700;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+        
+        .encrypted-title {
+            color: #b8860b;
+            font-size: 20px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .password-hint {
+            background-color: #f0f9f9;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 20px;
+            border-left: 4px solid #1d7373;
+        }
+        
+        .password-input {
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            width: 200px;
+            margin-right: 10px;
+        }
+        
+        .password-button {
+            padding: 10px 20px;
+            background-color: #1d7373;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        
+        .password-button:hover {
+            background-color: #0a4d4d;
+        }
+        
+        .password-result {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            display: none;
+        }
+        
+        .image-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            cursor: grab;
+        }
+        
+        .image-glow {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: scale(1);
+            transition: transform 0.3s ease;
+        }
+        
+        .zoomable-image {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            cursor: grab;
+            transition: transform 0.3s ease;
+        }
+        
+        .glow-border {
+            position: relative;
+        }
+        
+        .glow-border::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border: 5px solid #ff0000;
+            border-radius: 10px;
+            box-shadow: 0 0 30px #ff0000, 0 0 60px #ff0000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+        
+        .glow-border.active::before {
+            opacity: 0.3;
+        }
+        
+        .drag-indicator {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+        }
+        
+        .drag-indicator.show {
+            opacity: 1;
+        }
+        
+        @media (max-width: 1200px) {
+            .nav-menu {
+                padding: 0 10px;
+            }
+            
+            .nav-item {
+                padding: 0 18px;
+                font-size: 15px;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .main-nav {
+                height: 60px;
+            }
+            
+            .nav-logo-text h2 {
+                font-size: 20px;
+            }
+            
+            .nav-logo {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .nav-menu {
+                overflow-x: auto;
+                padding-bottom: 5px;
+            }
+            
+            .nav-item {
+                padding: 0 15px;
+                font-size: 14px;
+                white-space: nowrap;
+            }
+            
+            .header-top {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+            
+            .header-search-container {
+                width: 100%;
+            }
+            
+            .banner-title {
+                font-size: 36px;
+            }
+            
+            .banner-subtitle {
+                font-size: 20px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .main-nav {
+                padding: 0 10px;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px 0;
+            }
+            
+            .nav-logo-area {
+                margin-bottom: 10px;
+            }
+            
+            .nav-menu {
+                width: 100%;
+                justify-content: space-between;
+            }
+            
+            .nav-item {
+                flex: 1;
+                text-align: center;
+                padding: 10px 5px;
+                font-size: 13px;
+            }
+            
+            .header-banner {
+                height: 350px;
+            }
+            
+            .school-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+            
+            .banner-title {
+                font-size: 32px;
+            }
+            
+            .banner-subtitle {
+                font-size: 18px;
+            }
+            
+            .notice-list, .graduates-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            main {
+                padding: 30px 20px;
+            }
+            
+            .article-content {
+                padding: 30px 20px;
+            }
+            
+            .article-image {
+                height: 300px;
+            }
+            
+            .search-results {
+                padding: 30px 20px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .nav-item {
+                font-size: 12px;
+                padding: 10px 3px;
+            }
+            
+            .nav-logo-text h2 {
+                font-size: 18px;
+            }
+            
+            .header-banner {
+                height: 300px;
+            }
+            
+            .school-logo {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .school-name h1 {
+                font-size: 24px;
+            }
+            
+            .banner-title {
+                font-size: 28px;
+            }
+            
+            .article-title {
+                font-size: 28px;
+            }
+            
+            .section-title {
+                font-size: 26px;
+            }
+        }
+
+        .forum-replies {
+            margin-top: 30px;
+        }
+
+        .reply-item {
+            padding: 15px;
+            margin-bottom: 15px;
+            background-color: #f9f9f9;
+            border-left: 3px solid #1d7373;
+            border-radius: 5px;
+        }
+
+        .reply-item p {
+            margin-bottom: 5px;
+        }
+
+        .reply-item strong {
+            color: #0a4d4d;
+        }
+
+        .reply-item.locked {
+            background-color: #fff3cd;
+            border-left-color: #856404;
+            color: #856404;
+            font-weight: bold;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .reply-item .system-notice {
+            color: #721c24;
+            background-color: #f8d7da;
+            padding: 8px;
+            border-radius: 4px;
+        }
+
+        hr {
+            border: none;
+            border-top: 2px solid #eee;
+            margin: 25px 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="nav-logo-area">
+                <div class="nav-logo">
+                    <img src="https://i.postimg.cc/7hjCtL7m/xiao-hui.png" alt="青苗中学校徽">
+                </div>
+                <div class="nav-logo-text">
+                    <h2>青苗中学</h2>
+                    <p>QINGMIAO MIDDLE SCHOOL</p>
+                </div>
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="#" class="nav-item active">首页</a></li>
+                <li><a href="#" class="nav-item">教学科研</a></li>
+                <li><a href="#" class="nav-item">招生工作</a></li>
+                <li><a href="#" class="nav-item">青苗论坛</a></li>
+                <li><a href="#" class="nav-item">校友工作</a></li>
+                <li><a href="#" class="nav-item">在线报名</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- 版头 -->
+    <div class="header-banner">
+        <img src="https://i.imgs.ovh/2025/12/15/CYkBKb.md.jpeg" alt="青苗中学校园风景" class="banner-image">
+        
+        <div class="header-content">
+            <div class="header-top">
+                <div class="school-header">
+                    <div class="school-logo">
+                        <img src="https://i.postimg.cc/7hjCtL7m/xiao-hui.png" alt="青苗中学校徽">
+                    </div>
+                    <div class="school-name">
+                        <h1>青苗中学</h1>
+                        <p>QINGMIAO MIDDLE SCHOOL</p>
+                    </div>
+                </div>
+                
+                <div class="header-search-container">
+                    <div class="search-box">
+                        <input type="text" class="search-input" placeholder="搜索学校通知、文件、人员..." id="searchInput">
+                        <button class="search-button" id="searchButton">
+                            🔍
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="banner-main">
+                <h1 class="banner-title">每一株青苗，终将成材</h1>
+                <p class="banner-subtitle">培养未来社会的栋梁之才</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 主页内容 -->
+    <main id="mainContent">
+        <section class="notice-section">
+            <h2 class="section-title">学校推文</h2>
+            <div class="notice-list">
+                <!-- 推文1：营养补给计划全面升级 -->
+                <article class="notice-item">
+                    <h3>青苗中学营养补给计划全面升级：差异化膳食方案，精准助力成长</h3>
+                    <div class="notice-date">2023/03/12</div>
+                    <div class="notice-summary">
+                        为全面提升学生体质与学习效能，青苗中学营养膳食体系本学期再次优化升级，正式启动「分级营养补给计划」。
+                    </div>
+                    <div>
+                        <span class="notice-tag">#营养计划</span>
+                        <span class="notice-tag">#校园生活</span>
+                        <span class="notice-tag">#英材良品</span>
+                    </div>
+                    <a href="#article1" class="read-more detail-link" data-target="article1">查看详情</a>
+                </article>
+                
+                <!-- 推文2：新生住宿须知 -->
+                <article class="notice-item">
+                    <h3>青苗中学新生住宿须知｜封闭式管理体系正式说明</h3>
+                    <div class="notice-date">2025/08/31</div>
+                    <div class="notice-summary">
+                        为确保学生安全、有序的学习生活环境，现将住宿管理相关事项说明如下，请仔细阅读并共同遵守。
+                    </div>
+                    <div>
+                        <span class="notice-tag">#新生须知</span>
+                        <span class="notice-tag">#封闭式管理</span>
+                        <span class="notice-tag">#住宿规范</span>
+                    </div>
+                    <a href="#article2" class="read-more detail-link" data-target="article2">查看详情</a>
+                </article>
+                
+                <!-- 推文3：2025届英才报告 -->
+                <article class="notice-item">
+                    <h3>青苗中学2025届英才报告｜栽培，直到每一寸枝叶都朝向正确方向</h3>
+                    <div class="notice-date">2025/04/27</div>
+                    <div class="notice-summary">
+                        青苗中学的毕业生带着统一的根系记忆，在世界的各个维度生长出相似的形状——挺拔、有序、且始终朝着被定义的方向。
+                    </div>
+                    <div>
+                        <span class="notice-tag">#英才计划</span>
+                        <span class="notice-tag">#毕业生风采</span>
+                        <span class="notice-tag">#栽培模式</span>
+                    </div>
+                    <a href="#article3" class="read-more detail-link" data-target="article3">查看详情</a>
+                </article>
+                
+                <!-- 推文4：自主招生测评公告 -->
+                <article class="notice-item">
+                    <h3>青苗中学自主招生测评公告 | 新生力量，与优秀相遇</h3>
+                    <div class="notice-date">2025/5/1</div>
+                    <div class="notice-summary">
+                        青苗中学2025年秋季学期自主招生测评正式启动，诚邀各地具有学术潜质、品学兼优的初中毕业生参与选拔。
+                    </div>
+                    <div>
+                        <span class="notice-tag">#自主招生</span>
+                        <span class="notice-tag">#新生招募</span>
+                        <span class="notice-tag">#招生公告</span>
+                    </div>
+                    <a href="#article4" class="read-more detail-link" data-target="article4">查看详情</a>
+                </article>
+                
+                <!-- 推文5：新生入学体检通知 -->
+                <article class="notice-item">
+                    <h3>青苗中学新生入学体检通知 | 健康成材第一站</h3>
+                    <div class="notice-date">2025/06/25</div>
+                    <div class="notice-summary">
+                        为保障学生身心健康，构建完善的健康档案体系，我校将组织2025级全体新生进行统一入学体检。
+                    </div>
+                    <div>
+                        <span class="notice-tag">#新生体检</span>
+                        <span class="notice-tag">#校园健康</span>
+                        <span class="notice-tag">#入学准备</span>
+                    </div>
+                    <a href="#article5" class="read-more detail-link" data-target="article5">查看详情</a>
+                </article>
+                
+                <!-- 推文6：2025年秋季开学通知 -->
+                <article class="notice-item">
+                    <h3>青苗中学2025年秋季开学通知</h3>
+                    <div class="notice-date">2025年8月25日</div>
+                    <div class="notice-summary">
+                        青苗中学2025年秋季学期将于9月1日正式开学，为保障开学工作顺利进行，现将相关安排通知如下。
+                    </div>
+                    <div>
+                        <span class="notice-tag">#开学通知</span>
+                        <span class="notice-tag">#2025秋季</span>
+                        <span class="notice-tag">#新学期</span>
+                    </div>
+                    <a href="#article6" class="read-more detail-link" data-target="article6">查看详情</a>
+                </article>
+                
+            </div>
+        </section>
+        
+        <section class="graduates-section">
+            <h2 class="section-title">毕业生风采</h2>
+            <div class="graduates-grid">
+                <div class="graduate-card">
+                    <div class="graduate-img">
+                        <img src="https://i.postimg.cc/tJvjDkSm/chen-rui.jpg" alt="毕业生陈锐">
+                    </div>
+                    <div class="graduate-info">
+                        <h3 class="graduate-name">陈锐</h3>
+                        <p class="graduate-major">2010届 | 上市公司CEO</p>
+                        <p class="graduate-desc">将青苗时间管理模式植入企业，推行"分钟级会议制度"，旗下子公司员工效率提升31%。</p>
+                    </div>
+                </div>
+
+                <div class="graduate-card">
+                    <div class="graduate-img">
+                        <img src="https://i.postimg.cc/rsZkgjnf/li-ming-yuan.jpg" alt="毕业生李明渊">
+                    </div>
+                    <div class="graduate-info">
+                        <h3 class="graduate-name">李明渊</h3>
+                        <p class="graduate-major">2012届 | 政策研究室成员</p>
+                        <p class="graduate-desc">最年轻省级政策研究室成员，主导起草《青少年发展规划绩效评估体系》</p>
+                    </div>
+                </div>
+
+                <div class="graduate-card">
+                    <div class="graduate-img">
+                        <img src="https://i.postimg.cc/wM4pF2f4/zhou-wei.jpg" alt="毕业生周维">
+                    </div>
+                    <div class="graduate-info">
+                        <h3 class="graduate-name">周维</h3>
+                        <p class="graduate-major">2014届 | 人工智能研究员</p>
+                        <p class="graduate-desc">专注"可预测性人工智能"方向，发表论文21篇，其中19篇为团队合作成果。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- 1. 林昭成绩详情 -->
+    <div id="detail-linzhao-score" class="article-page">
+        <div class="article-header">
+            <h1 class="article-title">青苗中学2025年度秋季学期自主招生考试学生成绩单-林昭</h1>
+            <div class="article-meta">
+                <span>2025年7月20日</span>
+                <span>青苗中学招生办公室</span>
+            </div>
+        </div>
+        <div class="article-content">
+            <div class="article-image-container">
+                <div class="article-image" onclick="openImageZoom('https://i.imgs.ovh/2025/12/16/Co8smO.jpeg')">
+                    <img src="https://i.imgs.ovh/2025/12/16/Co8smO.jpeg" alt="林昭成绩单">
+                </div>
+                <p class="image-caption">林昭同学的自主招生考试成绩单（图片可点击放大）</p>
+            </div>
+            <p><strong>备注：</strong>该生符合青苗中学录取标准。</p>
+        </div>
+        <a href="#" class="back-to-home">返回首页</a>
+    </div>
+    
+    <!-- 2. 林昭体检详情 -->
+    <div id="detail-linzhao-health" class="article-page">
+        <div class="article-header">
+            <h1 class="article-title">青苗中学自主招生学生体检报告单-林昭</h1>
+            <div class="article-meta">
+                <span>2025年7月25日</span>
+                <span>青苗中学校医院</span>
+            </div>
+        </div>
+        <div class="article-content">
+            <div class="article-image-container">
+                <div class="article-image" onclick="openImageZoom('https://i.imgs.ovh/2026/01/06/yCRHtA.jpeg')">
+                    <img src="https://i.imgs.ovh/2026/01/06/yCRHtA.jpeg" alt="林昭体检报告">
+                </div>
+                <p class="image-caption">林昭同学的入学体检报告（图片可点击放大）</p>
+            </div>
+            <h3>健康状况评估</h3>
+            <p>该生各项体检指标符合青苗中学入学健康标准。</p>
+        </div>
+        <a href="#" class="back-to-home">返回首页</a>
+    </div>
+    
+    <!-- 3. 林又成绩详情 -->
+    <div id="detail-linyou-score" class="article-page">
+        <div class="article-header">
+            <h1 class="article-title">青苗中学2023年度秋季学期自主招生考试学生成绩单-林又</h1>
+            <div class="article-meta">
+                <span>2023年7月20日</span>
+                <span>青苗中学招生办公室</span>
+            </div>
+        </div>
+        <div class="article-content">
+            <div class="article-image-container">
+                <div class="article-image" onclick="openImageZoom('https://i.imgs.ovh/2025/12/16/Co8eP6.jpeg')">
+                    <img src="https://i.imgs.ovh/2025/12/16/Co8eP6.jpeg" alt="林又成绩单">
+                </div>
+                <p class="image-caption">林又同学的自主招生考试成绩单（图片可点击放大）</p>
+            </div>
+            <p><strong>备注：</strong>该生该生符合青苗中学录取标准。</p>
+        </div>
+        <a href="#" class="back-to-home">返回首页</a>
+    </div>
+    
+    <!-- 4. 林又体检详情 -->
+    <div id="detail-linyou-health" class="article-page">
+        <div class="article-header">
+            <h1 class="article-title">青苗中学自主招生学生体检报告单-林又</h1>
+            <div class="article-meta">
+                <span>2023年7月26日</span>
+                <span>青苗中学校医院</span>
+            </div>
+        </div>
+        <div class="article-content">
+            <div class="article-image-container">
+                <div class="article-image" onclick="openImageZoom('https://i.postimg.cc/BQdW6Xdv/lin-you-ti-jian.jpg')">
+                    <img src="https://i.postimg.cc/BQdW6Xdv/lin-you-ti-jian.jpg" alt="林又体检报告">
+                </div>
+                <p class="image-caption">林又同学的入学体检报告（图片可点击放大）</p>
+            </div>
+            <h3>健康状况评估</h3>
+            <p>该生各项体检指标符合青苗中学入学健康标准。</p>
+        </div>
+        <a href="#" class="back-to-home">返回首页</a>
+    </div>
+    
+    <!-- 5. 英才班分班表 -->
+    <div id="detail-yingcaiban" class="article-page">
+        <div class="article-header">
+            <h1 class="article-title">英才2510班-青苗中学英才班分班表</h1>
+            <div class="article-meta">
+                <span>2025年8月10日</span>
+                <span>青苗中学教务处</span>
+            </div>
+        </div>
+        <div class="article-content">
+            <div class="article-image-container">
+                <div class="article-image" onclick="openImageZoom('https://i.imgs.ovh/2025/12/16/Co6Q24.jpeg')">
+                    <img src="https://i.imgs.ovh/2025/12/16/Co6Q24.jpeg" alt="英才班分班表">
+                </div>
+                <p class="image-caption">2510班学生名单（图片可点击放大）</p>
+            </div>
+        </div>
+        <a href="#" class="back-to-home">返回首页</a>
+    </div>
+    
+    <!-- 青苗班分班表 -->
+    <div id="detail-qingmiaoban" class="article-page">
+        <div class="article-header">
+            <h1 class="article-title">2501班-青苗中学青苗班分班表</h1>
+            <div class="article-meta">
+                <span>2025年8月10日</span>
+                <span>青苗中学教务处</span>
+            </div>
+        </div>
+        <div class="article-content">
+            <div class="article-image-container">
+                <div class="article-image" onclick="openImageZoom('https://i.imgs.ovh/2025/12/16/Co6PzC.jpeg')">
+                    <img src="https://i.imgs.ovh/2025/12/16/Co6PzC.jpeg" alt="青苗班分班表">
+                </div>
+                <p class="image-caption">2501班学生名单（图片可点击放大）</p>
+            </div>
+        </div>
+        <a href="#" class="back-to-home">返回首页</a>
+    </div>
+
+    <!-- 学生手册 -->
+    <div id="detail-student-manual" class="article-page">
+        <div class="article-header">
+            <h1 class="article-title">青苗中学学生手册</h1>
+            <div class="article-meta">
+                <span>2025年8月1日</span>
+                <span>青苗中学德育处</span>
+            </div>
+        </div>
+        <div class="article-content">
+            <div class="article-image-container">
+                <div class="article-image" onclick="openImageZoom('https://i.postimg.cc/vB9h0ZPm/qing-miao-zhong-xue-xue-sheng-shou-ce.jpg')">
+                    <img src="https://i.postimg.cc/vB9h0ZPm/qing-miao-zhong-xue-xue-sheng-shou-ce.jpg" alt="学生手册">
+                </div>
+            </div>
+            <p><strong>内容简介：</strong>本手册涵盖行为规范、纪律要求、奖惩制度、安全守则、校园文化等内容，是每位学生必须遵守的基本准则。</p>
+        </div>
+        <a href="#" class="back-to-home">返回首页</a>
+    </div>
+    
+    <!-- 7. 宿舍管理员表彰 -->
+    <div id="detail-wangmei" class="article-page">
+        <div class="article-header">
+            <h1 class="article-title">青苗中学优秀宿舍管理员表彰推文</h1>
+            <div class="article-meta">
+                <span>2025年6月15日</span>
+                <span>青苗中学行政办</span>
+            </div>
+        </div>
+        <div class="article-content">
+            <div class="article-image-container">
+                <div class="article-image" onclick="openImageZoom('https://i.imgs.ovh/2025/12/16/Co8oPx.jpeg')">
+                    <img src="https://i.imgs.ovh/2025/12/16/Co8oPx.jpeg" alt="王梅工作照">
+                </div>
+                <p class="image-caption">王梅老师在宿舍巡查中的工作照片（图片可点击放大）</p>
+            </div>
+            <p><strong>表彰理由：</strong>王梅同志连续三年被评为"优秀宿舍管理员"，工作细致认真，深受学生喜爱，是校园生活的重要守护者。</p>
+            <div class="article-image-container">
+                <div class="article-image" onclick="openImageZoom('https://i.imgs.ovh/2025/12/16/Co8xQA.jpeg')">
+                    <img src="https://i.imgs.ovh/2025/12/16/Co8xQA.jpeg" alt="王梅工位照">
+                </div>
+                <p class="image-caption">王梅老师在宿舍的工位照片（图片可点击放大）</p>
+            </div>
+        </div>
+        <a href="#" class="back-to-home">返回首页</a>
+    </div>
+    
+    <!-- 8. 储物柜分配表 -->
+    <div id="detail-yc230617001" class="article-page">
+        <div class="article-header">
+            <h1 class="article-title">青苗中学1号宿舍楼储物柜分配表</h1>
+            <div class="article-meta">
+                <span>2025年9月11日</span>
+                <span>后勤管理部</span>
+            </div>
+        </div>
+        <div class="article-content">
+            <div class="search-detail-content">
+                <h3 class="search-detail-title">青苗中学1号宿舍1楼储物柜分配表</h3>
+                <div class="search-detail-meta">
+                    <span>更新时间：2025年9月11日 10:00</span>
+                    <span>使用对象：2023级学生（英才班）</span>
+                </div>
+                
+                <div class="search-detail-item" style="margin-top: 20px; overflow-x: auto;">
+                    <h4>储物柜分配详情（按学号顺序）</h4>
+                    <table style="width: 100%; border-collapse: collapse; margin-top: 15px;">
+                <thead>
+                    <tr style="background-color: #1d7373; color: white;">
+                        <th style="padding: 12px; text-align: left; border: 1px solid #0a4d4d;">序号</th>
+                        <th style="padding: 12px; text-align: left; border: 1px solid #0a4d4d;">储物柜编号</th>
+                        <th style="padding: 12px; text-align: left; border: 1px solid #0a4d4d;">学号</th>
+                        <th style="padding: 12px; text-align: left; border: 1px solid #0a4d4d;">分配状态</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="background-color: #f8fdfc;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">1</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC001</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC23*****001</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #d32f2f;">未分配</td>
+                    </tr>
+                    <tr style="background-color: white;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">2</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC002</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC23*****002</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: #f8fdfc;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">3</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC003</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC23*****003</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: white;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">4</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC004</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC23*****004</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: #f8fdfc;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">5</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC005</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC23*****005</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: white;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">6</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC006</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC23*****006</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: #f8fdfc;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">7</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC007</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC23*****007</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: white;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">8</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC008</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC23*****008</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: #f8fdfc;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">9</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC009</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC23*****009</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: white;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">10</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC010</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC23*****010</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: #f8fdfc;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">11</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC011</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC23*****011</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: white;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">12</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC012</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC23*****012</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: #f8fdfc;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">13</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC013</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC23*****013</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: white;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">14</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC014</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC23*****014</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: #f8fdfc;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">15</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC015</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC23*****015</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: white;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">16</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC016</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC23*****016</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: #f8fdfc;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">17</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC017</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC23*****017</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: white;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">18</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC018</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC23*****018</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: #f8fdfc;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">19</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC019</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC23*****019</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: white;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">20</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC020</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC23*****020</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: #f8fdfc;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">21</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC021</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC23*****021</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: white;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">22</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC022</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC23*****022</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: #f8fdfc;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">23</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC023</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC23*****023</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: white;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">24</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC024</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC23*****024</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: #f8fdfc;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">25</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC025</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC23*****025</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: white;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">26</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC026</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC23*****026</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: #f8fdfc;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">27</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC027</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC23*****027</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: white;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">28</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC028</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC23*****028</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: #f8fdfc;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">29</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC029</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC23*****029</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: white;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">30</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC030</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC23*****030</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: #f8fdfc;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">31</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC031</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC23*****031</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: white;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">32</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC032</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC23*****032</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: #f8fdfc;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">33</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC033</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC23*****033</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: white;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">34</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC034</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC23*****034</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: #f8fdfc;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">35</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC035</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC23*****035</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: white;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">36</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC036</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC23*****036</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: #f8fdfc;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">37</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC037</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC23*****037</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: white;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">38</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC038</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC23*****038</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: #f8fdfc;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">39</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC039</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC23*****039</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: white;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">40</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC040</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC23*****040</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: #f8fdfc;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">41</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC041</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC23*****041</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: white;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">42</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC042</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC23*****042</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: #f8fdfc;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">43</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC043</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC23*****043</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: white;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">44</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC044</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC23*****044</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: #f8fdfc;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">45</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC045</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC23*****045</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: white;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">46</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC046</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC23*****046</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: #f8fdfc;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">47</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC047</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC23*****047</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: white;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">48</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC048</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC23*****048</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: #f8fdfc;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">49</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC049</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC23*****049</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: white;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">50</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC050</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC23*****050</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="search-detail-note" style="margin-top: 20px; padding: 15px; background-color: #f0f9ff; border-left: 4px solid #1d7373;">
+            <p><strong>使用说明：</strong></p>
+            <ol style="margin: 10px 0; padding-left: 20px;">
+                <li>储物柜编号YC001-YC050对应1号宿舍楼1楼各区域</li>
+                <li>学号格式为YC23*****XXX，其中*****为生日加密显示，XXX为个人序列号</li>
+                <li>储物柜分配原则上按学号顺序排列</li>
+                <li>如需更换或报修，请携带学生证至宿舍管理室办理</li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+<a href="#" class="back-to-home">返回首页</a>
+    </div>
+    
+    <!-- 9. 林昭储物柜分配表 -->
+    <div id="detail-yc251123489" class="article-page">
+        <div class="article-header">
+            <h1 class="article-title">青苗中学1号宿舍3楼储物柜分配表</h1>
+            <div class="article-meta">
+                <span>2025年9月11日</span>
+                <span>后勤管理部</span>
+            </div>
+        </div>
+        <div class="article-content">
+            <div class="search-detail-content">
+                <h3 class="search-detail-title">青苗中学1号宿舍楼储物柜分配表</h3>
+                <div class="search-detail-meta">
+                    <span>更新时间：2025年9月11日 10:00</span>
+                    <span>使用对象：2025级学生（英才班）</span>
+                </div>
+                
+                <div class="search-detail-item" style="margin-top: 20px; overflow-x: auto;">
+                    <h4>储物柜分配详情（按学号顺序）</h4>
+                    <table style="width: 100%; border-collapse: collapse; margin-top: 15px;">
+                <thead>
+                    <tr style="background-color: #1d7373; color: white;">
+                        <th style="padding: 12px; text-align: left; border: 1px solid #0a4d4d;">序号</th>
+                        <th style="padding: 12px; text-align: left; border: 1px solid #0a4d4d;">储物柜编号</th>
+                        <th style="padding: 12px; text-align: left; border: 1px solid #0a4d4d;">学号</th>
+                        <th style="padding: 12px; text-align: left; border: 1px solid #0a4d4d;">分配状态</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="background-color: #f8fdfc;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">1</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC001</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC25*****001</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: white;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">2</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC002</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC25*****002</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: #f8fdfc;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">3</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC003</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC25*****003</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: white;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">4</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC004</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC25*****004</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: #f8fdfc;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">5</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC005</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC25*****005</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: white;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">6</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC006</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC25*****006</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: #f8fdfc;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">7</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC007</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC25*****007</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: white;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">8</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC008</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC25*****008</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: #f8fdfc;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">9</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC009</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC25*****009</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: white;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">10</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC010</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC25*****010</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: #f8fdfc;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">11</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC011</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC25*****011</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: white;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">12</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC012</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC25*****012</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: #f8fdfc;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">13</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC013</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC25*****013</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: white;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">14</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC014</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC25*****014</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: #f8fdfc;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">15</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC015</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC25*****015</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: white;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">16</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC016</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC25*****016</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: #f8fdfc;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">17</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC017</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC25*****017</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: white;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">18</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC018</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC25*****018</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: #f8fdfc;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">19</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC019</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC25*****019</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: white;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">20</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC020</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC25*****020</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: #f8fdfc;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">21</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC021</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC25*****021</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: white;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">22</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC022</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC25*****022</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: #f8fdfc;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">23</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC023</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC25*****023</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: white;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">24</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC024</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC25*****024</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: #f8fdfc;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">25</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC025</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC25*****025</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: white;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">26</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC026</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC25*****026</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: #f8fdfc;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">27</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC027</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC25*****027</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: white;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">28</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC028</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC25*****028</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: #f8fdfc;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">29</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC029</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC25*****029</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: white;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">30</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC030</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC25*****030</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: #f8fdfc;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">31</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC031</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC25*****031</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: white;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">32</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC032</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC25*****032</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: #f8fdfc;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">33</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC033</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC25*****033</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: white;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">34</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC034</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC25*****034</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: #f8fdfc;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">35</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC035</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC25*****035</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: white;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">36</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC036</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC25*****036</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: #f8fdfc;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">37</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC037</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC25*****037</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: white;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">38</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC038</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC25*****038</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: #f8fdfc;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">39</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC039</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC25*****039</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: white;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">40</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC040</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC25*****040</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: #f8fdfc;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">41</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC041</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC25*****041</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: white;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">42</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC042</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC25*****042</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: #f8fdfc;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">43</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC043</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC25*****043</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: white;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">44</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC044</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC25*****044</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: #f8fdfc;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">45</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC045</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC25*****045</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: white;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">46</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC046</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC25*****046</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: #f8fdfc;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">47</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC047</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC25*****047</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: white;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">48</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC048</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC25*****048</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: #f8fdfc;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">49</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC049</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC25*****049</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                    <tr style="background-color: white;">
+                        <td style="padding: 12px; border: 1px solid #ddd;">50</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC050</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">YC25*****050</td>
+                        <td style="padding: 12px; border: 1px solid #ddd; color: #2e7d32;">已分配</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="search-detail-note" style="margin-top: 20px; padding: 15px; background-color: #f0f9ff; border-left: 4px solid #1d7373;">
+            <p><strong>使用说明：</strong></p>
+            <ol style="margin: 10px 0; padding-left: 20px;">
+                <li>储物柜编号YC001-YC050对应1号宿舍楼3楼各区域</li>
+                <li>学号格式为YC25*****XXX，其中*****为生日加密显示，XXX为个人序列号</li>
+                <li>储物柜分配原则上按学号顺序排列</li>
+                <li>如需更换或报修，请携带学生证至宿舍管理室办理</li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+<a href="#" class="back-to-home">返回首页</a>
+    </div>
+
+    <!-- 9. 斗殴处分记录 -->
+    <div id="detail-fight-record" class="article-page">
+        <div class="article-header">
+            <h1 class="article-title">实验楼厕所斗殴处分记录</h1>
+            <div class="article-meta">
+                <span>2024年12月15日</span>
+                <span>青苗中学学生处</span>
+            </div>
+        </div>
+        <div class="article-content">
+            <div class="article-image-container">
+                <div class="article-image" onclick="openImageZoom('https://i.imgs.ovh/2026/01/02/CinQ24.jpeg')">
+                    <img src="https://i.imgs.ovh/2026/01/02/CinQ24.jpeg" alt="斗殴处分记录">
+                </div>
+                <p class="image-caption">实验楼厕所斗殴处分记录（图片可点击放大）</p>
+            </div>
+        </div>
+        <a href="#" class="back-to-home">返回首页</a>
+    </div>
+    
+    <!-- 13. 食堂食材配货单 -->
+    <div id="detail-canteen" class="article-page">
+        <div class="article-header">
+            <h1 class="article-title">青苗中学食堂食材配货单（2025年9月第2周）</h1>
+            <div class="article-meta">
+                <span>2025年9月10日</span>
+                <span>后勤保障中心</span>
+            </div>
+        </div>
+        <div class="article-content">
+            <!-- 表格展示配货单 -->
+            <div style="margin-top: 30px; overflow-x: auto;">
+                <table style="width: 100%; border-collapse: collapse; font-size: 15px; background-color: white; box-shadow: 0 4px 10px rgba(0, 80, 80, 0.05);">
+                    <thead>
+                        <tr style="background-color: #1d7373; color: white;">
+                            <th style="padding: 12px; text-align: left; border: 1px solid #0a4d4d;">序号</th>
+                            <th style="padding: 12px; text-align: left; border: 1px solid #0a4d4d;">食材类别</th>
+                            <th style="padding: 12px; text-align: left; border: 1px solid #0a4d4d;">品名</th>
+                            <th style="padding: 12px; text-align: left; border: 1px solid #0a4d4d;">规格</th>
+                            <th style="padding: 12px; text-align: left; border: 1px solid #0a4d4d;">数量</th>
+                            <th style="padding: 12px; text-align: left; border: 1px solid #0a4d4d;">来源单位</th>
+                            <th style="padding: 12px; text-align: left; border: 1px solid #0a4d4d;">备注</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid #eee; background-color: #f8fdfc;">
+                            <td style="padding: 10px; text-align: center; color: #0a4d4d; border: 1px solid #ddd;">1</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">主食类</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">东北大米</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">25kg/袋</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">40袋</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">金穗粮油有限公司</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">英才班/青苗班通用</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #eee; background-color: white;">
+                            <td style="padding: 10px; text-align: center; color: #0a4d4d; border: 1px solid #ddd;">2</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">主食类</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">特制面粉</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">20kg/袋</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">32袋</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">金穗粮油有限公司</td>
+                            <td style="padding: 10px; border: 1px solid #ddd; color: #1d7373;">英才班专用，含营养强化剂</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #eee; background-color: #f8fdfc;">
+                            <td style="padding: 10px; text-align: center; color: #0a4d4d; border: 1px solid #ddd;">3</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">蔬菜类</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">新鲜菠菜</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">10kg/箱</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">15箱</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">绿源蔬菜合作社</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">每日早6点直送</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #eee; background-color: white;">
+                            <td style="padding: 10px; text-align: center; color: #0a4d4d; border: 1px solid #ddd;">4</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">蔬菜类</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">有机番茄</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">8kg/箱</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">20箱</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">绿源蔬菜合作社</td>
+                            <td style="padding: 10px; border: 1px solid #ddd; color: #1d7373;">英才班专用</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #eee; background-color: #f8fdfc;">
+                            <td style="padding: 10px; text-align: center; color: #0a4d4d; border: 1px solid #ddd;">5</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">肉类</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">冷冻猪里脊</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">15kg/箱</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">10箱</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">安诚食品加工厂</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">检验合格章编号：AC20250521</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #eee; background-color: white;">
+                            <td style="padding: 10px; text-align: center; color: #0a4d4d; border: 1px solid #ddd;">6</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">肉类</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">精选牛腩</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">10kg/箱</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">8箱</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">安诚食品加工厂</td>
+                            <td style="padding: 10px; border: 1px solid #ddd; color: #1d7373;">英才班专用</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #eee; background-color: #f8fdfc;">
+                            <td style="padding: 10px; text-align: center; color: #0a4d4d; border: 1px solid #ddd;">7</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">水产类</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">冷冻海鲈鱼</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">5kg/箱</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">12箱</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">海丰水产公司</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">每箱独立检疫证明</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #eee; background-color: white;">
+                            <td style="padding: 10px; text-align: center; color: #0a4d4d; border: 1px solid #ddd;">8</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">蛋奶类</td>
+                            <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">鲜牛奶</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">200ml/盒</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">600盒</td>
+                            <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">校医院营养科</td>
+                            <td style="padding: 10px; border: 1px solid #ddd; color: #d32f2f; font-weight: bold;">仅供英才班，每日随餐配送</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #eee; background-color: #f8fdfc;">
+                            <td style="padding: 10px; text-align: center; color: #0a4d4d; border: 1px solid #ddd;">9</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">蛋奶类</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">鸡蛋</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">60枚/箱</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">25箱</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">德农牧场</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">青苗班每日限供1枚</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #eee; background-color: white;">
+                            <td style="padding: 10px; text-align: center; color: #0a4d4d; border: 1px solid #ddd;">10</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">调味品</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">食用油</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">20L/桶</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">8桶</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">金穗粮油有限公司</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">大豆油、菜籽油各半</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #eee; background-color: #f8fdfc;">
+                            <td style="padding: 10px; text-align: center; color: #0a4d4d; border: 1px solid #ddd;">11</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">调味品</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">食盐</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">10kg/袋</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">3袋</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">盐业公司</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">含碘加锌盐</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #eee; background-color: white;">
+                            <td style="padding: 10px; text-align: center; color: #0a4d4d; border: 1px solid #ddd;">12</td>
+                            <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">特殊供应</td>
+                            <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">"英材良品"罐头</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">500g/罐</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">400罐</td>
+                            <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">青苗农场</td>
+                            <td style="padding: 10px; border: 1px solid #ddd; color: #d32f2f; font-weight: bold;">仅供青苗班，每日3餐配发</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #eee; background-color: #f8fdfc;">
+                            <td style="padding: 10px; text-align: center; color: #0a4d4d; border: 1px solid #ddd;">13</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">水果类</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">苹果</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">15kg/箱</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">10箱</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">绿源蔬菜合作社</td>
+                            <td style="padding: 10px; border: 1px solid #ddd; color: #1d7373;">英才班专用</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #eee; background-color: white;">
+                            <td style="padding: 10px; text-align: center; color: #0a4d4d; border: 1px solid #ddd;">14</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">水果类</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">香蕉</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">10kg/箱</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">8箱</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">绿源蔬菜合作社</td>
+                            <td style="padding: 10px; border: 1px solid #ddd; color: #1d7373;">英才班专用</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #eee; background-color: #f8fdfc;">
+                            <td style="padding: 10px; text-align: center; color: #0a4d4d; border: 1px solid #ddd;">15</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">豆制品</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">新鲜豆腐</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">5kg/箱</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">12箱</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">豆香坊</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">每日上午8点前送达</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #eee; background-color: white;">
+                            <td style="padding: 10px; text-align: center; color: #0a4d4d; border: 1px solid #ddd;">16</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">调味品</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">酱油</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">5L/桶</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">6桶</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">味之源食品厂</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">酿造酱油，无添加</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #eee; background-color: #f8fdfc;">
+                            <td style="padding: 10px; text-align: center; color: #0a4d4d; border: 1px solid #ddd;">17</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">调味品</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">食醋</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">5L/桶</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">4桶</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">味之源食品厂</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">陈醋</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #eee; background-color: white;">
+                            <td style="padding: 10px; text-align: center; color: #0a4d4d; border: 1px solid #ddd;">18</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">干货类</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">干香菇</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">1kg/袋</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">20袋</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">山珍干货行</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">一级品</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #eee; background-color: #f8fdfc;">
+                            <td style="padding: 10px; text-align: center; color: #0a4d4d; border: 1px solid #ddd;">19</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">干货类</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">黑木耳</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">500g/袋</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">25袋</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">山珍干货行</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">小碗耳</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #eee; background-color: white;">
+                            <td style="padding: 10px; text-align: center; color: #0a4d4d; border: 1px solid #ddd;">20</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">调料包</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">炖肉料包</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">100g/袋</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">50袋</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">香辛料公司</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">独立小包装</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div style="margin-top: 30px; padding: 25px; background-color: #f0f9f9; border-radius: 10px; border-left: 4px solid #1d7373; font-size: 15px; line-height: 1.7;">
+                <h4 style="color: #0a4d4d; margin-bottom: 15px; font-size: 20px;">特殊供应说明</h4>
+                <ul style="margin-left: 20px; list-style-type: disc;">
+                    <li><strong>牛奶供应（校医院营养科）</strong>
+                        <ul style="margin-top: 8px; margin-left: 20px;">
+                            <li>供应对象：仅限英才班学生</li>
+                            <li>配送方式：每日早7:00、晚18:00由校医院营养科专人配送至食堂专用冷藏柜</li>
+                            <li>领取流程：英才班学生凭学生证于餐后在"营养补充窗口"领取</li>
+                            <li>备注：该牛奶为校医院特制营养配方，含DHA、神经生长因子等成分，青苗班学生禁止饮用</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <a href="#" class="back-to-home">返回首页</a>
+    </div>
+    
+    <!-- 14. 校医院官网跳转链接 -->
+    <div id="detail-hospital" class="article-page">
+        <div class="article-header">
+            <h1 class="article-title">青苗中学校医院官网</h1>
+            <div class="article-meta">
+                <span>2025年9月1日</span>
+                <span>校医院办公室</span>
+            </div>
+        </div>
+        <div class="article-content">
+            <p>为保障学生身心健康，构建完善的健康档案体系，我校将组织2025级全体新生进行统一入学体检。本次体检将在青苗中学校医院集中开展，所有报名学生均须参加，相关事宜通知如下：</p>
+            
+            <h4>体检时间</h4>
+            <p>2025年7月8日-7月10日（上午7:30-11:30）</p>
+            <p>请按报名编号分批次前往，具体时间安排将通过短信通知。</p>
+            
+            <h4>体检地点</h4>
+            <p>青苗中学校医院（校园东侧健康中心）</p>
+            
+            <h4>注意事项</h4>
+            <ol>
+                <li>空腹要求：体检当日早晨请勿进食、饮水，需保持至少8小时空腹状态，确保检测结果准确。</li>
+                <li><strong>YC基因筛查：本次体检包含"YC潜能基因筛查"项目，用于评估学生的体质特质与发展潜能，为后续个性化培养提供科学依据。</strong></li>
+            </ol>
+            
+            <p>健康的身体是成长的基石，青苗中学始终将学生身心发展置于首位。请各位同学与家长积极配合，共同完成入学前的重要准备。</p>
+            
+            <p>如有疑问，请联系招生办公室或校医室。</p>
+			<p>校医院官网链接：https://qingmiaomiddleschool.github.io/Hospital-Ingenium/</p>
+            <p>联系电话：XXXX-XXXXXXX</p>
+            
+            <div class="article-tags">
+                <span class="notice-tag">#青苗中学</span>
+                <span class="notice-tag">#新生体检</span>
+                <span class="notice-tag">#校园健康</span>
+            </div>
+        </div>
+        <a href="#" class="back-to-home">返回首页</a>
+    </div>
+    
+    <!-- 劳动教育指导手册 -->
+    <div id="detail-zhangxiaomiao-labor" class="article-page">
+        <div class="article-header">
+            <h1 class="article-title">青苗中学劳动教育指导手册</h1>
+            <div class="article-meta">
+                <span>2025年8月30日</span>
+                <span>青苗中学德育处</span>
+            </div>
+        </div>
+        <div class="article-content">
+            <!-- 第一张图片：劳动教育手册1 -->
+            <div class="article-image-container">
+                <div class="article-image" onclick="openImageZoom('https://i.postimg.cc/W4zfwjRf/bo-zhong1.png')">
+                    <img src="https://i.postimg.cc/W4zfwjRf/bo-zhong1.png" alt="劳动教育手册1">
+                </div>
+			 <div class="article-image" onclick="openImageZoom('https://i.postimg.cc/MGHrmxkF/jian-zhi2.png')">
+                    <img src="https://i.postimg.cc/MGHrmxkF/jian-zhi2.png" alt="劳动教育手册2">
+                </div>
+                <p class="image-caption">劳动教育手册第1-2页（点击放大）</p>
+            </div>
+            <!-- 第一张图片密码输入框 -->
+            <div class="password-section" id="passwordSection1">
+                <div class="encrypted-file">
+                    <div class="encrypted-title">🔒 请输入解锁密码以查看下一章</div>
+                    <div style="margin-top: 20px;">
+                        <input type="text" id="passwordInput1" class="password-input" placeholder="请输入4位密码" maxlength="4" autocomplete="off">
+                        <button class="password-button" onclick="checkPassword(1)">解锁</button>
+                    </div>
+                    <div id="passwordResult1" class="password-result"></div>
+                </div>
+            </div>
+            
+            <!-- 第二张图片：劳动教育手册2 -->
+            <div class="article-image-container" id="imageContainer2" style="display: none;">
+                <div class="article-image" onclick="openImageZoom('https://i.postimg.cc/JzP2X0gV/guan-gai3.jpg')">
+                    <img src="https://i.postimg.cc/JzP2X0gV/guan-gai3.jpg" alt="劳动教育手册3">
+                </div>
+                <p class="image-caption">劳动教育手册第3页（点击放大）</p>
+            </div>
+            <!-- 第二张图片密码输入框 -->
+            <div class="password-section" id="passwordSection2" style="display: none;">
+                <div class="encrypted-file">
+                    <div class="encrypted-title">🔒 请输入解锁密码以查看下一章</div>
+                    <div style="margin-top: 20px;">
+                        <input type="text" id="passwordInput2" class="password-input" placeholder="请输入5位密码" maxlength="5" autocomplete="off">
+                        <button class="password-button" onclick="checkPassword(2)">解锁</button>
+                    </div>
+                    <div id="passwordResult2" class="password-result"></div>
+                </div>
+            </div>
+            
+            <!-- 第三张图片：劳动教育手册3 -->
+            <div class="article-image-container" id="imageContainer3" style="display: none;">
+                <div class="article-image" onclick="openImageZoom('https://i.postimg.cc/TP1HJG8t/shou-huo4.jpg')">
+                    <img src="https://i.postimg.cc/TP1HJG8t/shou-huo4.jpg" alt="劳动教育手册4">
+                </div>
+                <p class="image-caption">劳动教育手册第4页（点击放大）</p>
+            </div>
+        </div>
+        <a href="#" class="back-to-home">返回首页</a>
+    </div>
+    
+    <!--  安全事件调查报告（加密文件） -->
+    <div id="detail-zhangxiaomiao-report" class="article-page">
+        <div class="article-header">
+            <h1 class="article-title">关于我校23级英才班学生安全事件的调查报告</h1>
+            <div class="article-meta">
+                <span>2025年4月15日</span>
+                <span>青苗中学安全调查委员会</span>
+            </div>
+        </div>
+        <div class="article-content">
+            <!-- 加密文件区域：仅显示密码输入框 -->
+            <div class="encrypted-file">
+                <div class="encrypted-title">🔒 安全事件调查报告（加密文件）</div>
+                <div style="margin-top: 20px;">
+                    <input type="text" id="reportPassword" class="password-input" placeholder="请输入收获的时间（4位密码）" maxlength="4" autocomplete="off">
+                    <button class="password-button" onclick="checkReportPassword()">解锁文件</button>
+                </div>
+                <div id="passwordResult" class="password-result"></div>
+                <!-- 解密后的内容（初始隐藏） -->
+                <div id="encryptedContent" style="display: none; margin-top: 25px; padding: 20px; background-color: #f0f9f9; border-radius: 8px; font-size: 16px; line-height: 1.6;">
+                    <div class="article-image-container">
+                        <div class="article-image" onclick="openImageZoom('https://i.imgs.ovh/2026/01/05/y7p86q.jpeg')">
+                            <img src="https://i.imgs.ovh/2026/01/05/y7p86q.jpeg" alt="安全调查会议">
+                        </div>
+                        <p class="image-caption">安全调查委员会调查结果（图片可点击放大）</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="back-to-home">返回首页</a>
+    </div>
+       
+    <!-- 推文1详情：营养补给计划全面升级 -->
+    <div id="article1" class="article-page">
+        <div class="article-header">
+            <h1 class="article-title">青苗中学营养补给计划全面升级：差异化膳食方案，精准助力成长</h1>
+            <div class="article-meta">
+                <span>2025/08/31</span>
+                <span>青苗中学宣传部</span>
+            </div>
+        </div>
+        <div class="article-content">
+            <p>为全面提升学生体质与学习效能，青苗中学营养膳食体系本学期再次优化升级。学校结合不同班级学生的发展需求，正式启动「分级营养补给计划」，推动精细化、科学化校园饮食管理迈上新台阶。</p>
+            
+            <h4>英才班：早晚奶源计划，激活大脑活力</h4>
+            <p>英才班学生每天早晚两餐固定供应优质<span class="underline">牛奶</span>，重点补充蛋白质与钙质，旨在提升学生记忆力、抗压能力与体能恢复速度，为高强度脑力训练提供充足营养支持。</p>
+            
+            <h4>青苗班："英材良品"系列罐头，营养均衡一步到位</h4>
+            <p>青苗班三餐配备学校自主研发的<span class="underline">"英材良品"特制营养膳食</span>，原材料来自学校专属青苗农场，以标准化配方确保每日必需营养摄入，满足日常学习生活所需。</p>
+            
+            <h4>全程营养监控，数据驱动健康</h4>
+            <p>两套膳食方案均配合校园营养管理平台运行，学生摄入数据将同步至个人健康档案。校医室与食堂营养师将定期评估学生体质变化，动态优化配餐结构，让每一份营养落到实处。</p>
+            
+            <p>青苗中学始终相信：适宜的饮食是对学习最基础的支持。我们坚持用科学配餐守护成长，以差异化方案回应不同需求，让每位学生都能在适合自己的节奏中，稳步前行，健康成长。</p>
+            
+            <div class="article-tags">
+                <span class="notice-tag">#青苗中学</span>
+                <span class="notice-tag">#营养计划</span>
+                <span class="notice-tag">#校园生活</span>
+            </div>
+        </div>
+        <a href="#" class="back-to-home">返回首页</a>
+    </div>
+    
+    <!-- 推文2详情：新生住宿须知 -->
+    <div id="article2" class="article-page">
+        <div class="article-header">
+            <h1 class="article-title">青苗中学新生住宿须知｜封闭式管理体系正式说明</h1>
+            <div class="article-meta">
+                <span>2025/08/31</span>
+                <span>青苗中学学生处</span>
+            </div>
+        </div>
+        <div class="article-content">
+            <p>各位新生及家长：</p>
+            <p>欢迎即将加入青苗中学大家庭！为确保学生安全、有序的学习生活环境，现将住宿管理相关事项说明如下，请仔细阅读并共同遵守。</p>
+            
+            <h4>全封闭校园，守护纯粹学习环境</h4>
+            <ol>
+                <li>青苗中学实行全程封闭式管理制度，高中三年学习期间，学生原则上不得离校。</li>
+                <li>学校每周四晚间开放亲情通话时间，方便学生与家人联系。</li>
+            </ol>
+            
+            <h4>严格作息管理，培养自律习惯</h4>
+            <p>学校每日实行统一的作息安排，晚上<span class="underline">10：30</span>准时熄灯宵禁，宿舍区将关闭大门并启动夜间管理。请同学们合理安排晚间学习与休息时间，熄灯后保持安静，确保睡眠质量。</p>
+            
+            <h4>睡前营养补给，珍惜每份资源</h4>
+            <p>学校为每位同学提供晚间牛奶饮用安排，发放时间为每晚九点半至十点。请同学们按时领取并在宿舍内饮用，饮用后请将空盒压平投入指定回收箱。牛奶为定制营养补给，严禁浪费或丢弃，学校将进行环保与纪律考评。</p>
+            
+            <h4>宿舍生活规范，共建和谐空间</h4>
+            <ol>
+                <li>每间宿舍配备独立卫生间、书桌及储物柜，请合理使用并保持整洁；</li>
+                <li>严禁攀比外貌、穿戴等，禁止在穿衣镜面前停留超过五分钟；</li>
+                <li>禁止携带手机、游戏机等电子设备，可携带非智能型电子手表；</li>
+                <li>宿舍区每晚有宿舍管理员巡查，如需帮助可随时联系。</li>
+            </ol>
+            
+            <div class="article-tags">
+                <span class="notice-tag">#青苗中学</span>
+                <span class="notice-tag">#新生须知</span>
+                <span class="notice-tag">#封闭式管理</span>
+                <span class="notice-tag">#住宿规范</span>
+            </div>
+        </div>
+        <a href="#" class="back-to-home">返回首页</a>
+    </div>
+    
+    <!-- 推文3详情：2025届英才报告 -->
+    <div id="article3" class="article-page">
+        <div class="article-header">
+            <h1 class="article-title">青苗中学2025届英才报告｜栽培，直到每一寸枝叶都朝向正确方向</h1>
+            <div class="article-meta">
+                <span>2025/04/27</span>
+                <span>青苗中学宣传部</span>
+            </div>
+        </div>
+        <div class="article-content">
+            <p>十年树木，百年成材。青苗中学的毕业生带着统一的根系记忆，在世界的各个维度生长出相似的形状——挺拔、有序、且始终朝着被定义的方向。以下是他们在标准化栽培后，在各领域呈现的高度一致的成功轨迹。</p>
+            
+            <h4>政界：程序型领导者</h4>
+            <p>张政（2008届）：现任某市发改委副主任，任内推行"标准化政务流程"，将基层决策时间缩短47%</p>
+            <p>李明渊（2012届）：最年轻省级政策研究室成员，主导起草《青少年发展规划绩效评估体系》</p>
+            
+            <h4>商界：效率型经营者</h4>
+            <p>陈锐（2010届）：某上市公司CEO，将青苗时间管理模式植入企业，推行"分钟级会议制度"旗下子公司员工效率提升31%，员工满意度同比下降12%</p>
+            
+            <h4>科研：目标驱动型学者</h4>
+            <p>周维（2014届）：国家重点实验室研究员，专注"可预测性人工智能"方向发表论文21篇，其中19篇为团队合作成果，独创性指数低于领域平均值坦言："我喜欢解决已被定义的问题"</p>
+            
+            <h4>教育：栽培模式传承者</h4>
+            <p>许静（2016届）：返回青苗中学任教，率先推行"课堂行为积分系统"所带班级平均分提升5.8分，学生课外活动参与率下降至9%</p>
+            
+            <h4>一致性数据报告</h4>
+            <ul>
+                <li>校友职业稳定性指数高于全国平均水平89%</li>
+                <li>跨行业转岗率仅为社会平均值的1/3</li>
+                <li>82%的校友认为"遵守规则比创新更重要"</li>
+                <li>在"你是否感到幸福"的调查中，91%选择"我正在完成应完成的事"</li>
+            </ul>
+            
+            <div class="article-tags">
+                <span class="notice-tag">#青苗中学</span>
+                <span class="notice-tag">#英才计划</span>
+                <span class="notice-tag">#校园生活</span>
+            </div>
+        </div>
+        <a href="#" class="back-to-home">返回首页</a>
+    </div>
+    
+    <!-- 推文4详情：自主招生测评公告 -->
+    <div id="article4" class="article-page">
+        <div class="article-header">
+            <h1 class="article-title">青苗中学自主招生测评公告 | 新生力量，与优秀相遇</h1>
+            <div class="article-meta">
+                <span>2025/5/1</span>
+                <span>青苗中学招生办公室</span>
+            </div>
+        </div>
+        <div class="article-content">
+            <p>青苗中学2025年秋季学期自主招生测评正式启动，诚邀各地具有学术潜质、品学兼优的初中毕业生参与选拔。本届计划面向全国招募500名优秀新生，秉承公平公正、科学选才的原则，开启属于你的成长新篇章。</p>
+            
+            <h4>测评安排</h4>
+            <ul>
+                <li>报名时间：即日起至6月15日</li>
+                <li>考试时间：7月12日</li>
+                <li>结果公布：7月20日前</li>
+            </ul>
+            
+            <h4>我们期待的你</h4>
+            <ul>
+                <li>举一反三、触类旁通，拥有无限可能；</li>
+                <li>品学兼优，具有强烈规则意识和团队互助精神；</li>
+                <li>身体健康，具备良好的适应能力与抗压素质。</li>
+            </ul>
+            
+            <h4>报名方式</h4>
+            <ol>
+                <li>登录青苗中学官网招生系统注册报名</li>
+                <li>提交近期成绩单、个人陈述及教师推荐信</li>
+                <li>通过初审后获取测评准考证</li>
+            </ol>
+            
+            <p>青苗是一方深耕的土壤，更是一片成长的原野。在这里，知识有路径，成长有陪伴，青春有回响。期待今秋九月，与500位优秀的你，在青苗相遇，青年英才，茁壮成长。</p>
+            
+            <p>------</p>
+            <p>青苗中学招生办公室</p>
+            <p>咨询电话：XXXX-XXXXXXX</p>
+            <p>官方网站：www.qingmiaoschool.edu.cn</p>
+            
+            <div class="article-tags">
+                <span class="notice-tag">#青苗中学</span>
+                <span class="notice-tag">#自主招生</span>
+                <span class="notice-tag">#新生招募</span>
+            </div>
+        </div>
+        <a href="#" class="back-to-home">返回首页</a>
+    </div>
+    
+    <!-- 推文5详情：新生入学体检通知 -->
+    <div id="article5" class="article-page">
+        <div class="article-header">
+            <h1 class="article-title">青苗中学新生入学体检通知 | 健康成材第一站</h1>
+            <div class="article-meta">
+                <span>2025/06/25</span>
+                <span>青苗中学校医院</span>
+            </div>
+        </div>
+        <div class="article-content">
+            <p>为保障学生身心健康，构建完善的健康档案体系，我校将组织2025级全体新生进行统一入学体检。本次体检将在青苗中学校医院集中开展，所有报名学生均须参加，相关事宜通知如下：</p>
+            
+            <h4>体检时间</h4>
+            <p>2025年7月8日-7月10日（上午7:30-11:30）</p>
+            <p>请按报名编号分批次前往，具体时间安排将通过短信通知。</p>
+            
+            <h4>体检地点</h4>
+            <p>青苗中学校医院（校园东侧健康中心）</p>
+            
+            <h4>注意事项</h4>
+            <ol>
+                <li>空腹要求：体检当日早晨请勿进食、饮水，需保持至少8小时空腹状态，确保检测结果准确。</li>
+                <li><strong>YC基因筛查：本次体检包含"YC潜能基因筛查"项目，用于评估学生的体质特质与发展潜能，为后续个性化培养提供科学依据。</strong></li>
+            </ol>
+            
+            <p>健康的身体是成长的基石，青苗中学始终将学生身心发展置于首位。请各位同学与家长积极配合，共同完成入学前的重要准备。</p>
+            
+            <p>如有疑问，请联系招生办公室或校医室。</p>
+			<p>校医院官网链接：https://qingmiaomiddleschool.github.io/Hospital-Ingenium/</p>
+            <p>联系电话：XXXX-XXXXXXX</p>
+            
+            <div class="article-tags">
+                <span class="notice-tag">#青苗中学</span>
+                <span class="notice-tag">#新生体检</span>
+                <span class="notice-tag">#校园健康</span>
+            </div>
+        </div>
+        <a href="#" class="back-to-home">返回首页</a>
+    </div>
+    
+    <!-- 推文6详情：2025年秋季开学通知 -->
+    <div id="article6" class="article-page">
+        <div class="article-header">
+            <h1 class="article-title">青苗中学2025年秋季开学通知</h1>
+            <div class="article-meta">
+                <span>2025年8月25日</span>
+                <span>青苗中学教务处</span>
+            </div>
+        </div>
+        <div class="article-content">
+            <p>青苗中学2025年秋季学期将于9月1日正式开学，为保障开学工作顺利进行，现将相关安排通知如下：</p>
+            
+            <h4>报到时间</h4>
+            <p>8月31日 下午12:00-16:00</p>
+            
+            <h4>开学典礼</h4>
+            <p>9月1日 上午9:00 学校操场</p>
+            
+            <h4>注意事项</h4>
+            <ul>
+                <li>请携带个人生活用品及入学相关材料</li>
+                <li>新生需携带体检报告和录取通知书</li>
+                <li>老生需携带暑假作业和社会实践报告</li>
+            </ul>
+            
+            <p>新学期，新起点，青苗中学全体教职工已做好充分准备，迎接同学们的到来！</p>
+            
+            <div class="article-tags">
+                <span class="notice-tag">#开学通知</span>
+                <span class="notice-tag">#2025秋季</span>
+                <span class="notice-tag">#新学期</span>
+            </div>
+        </div>
+        <a href="#" class="back-to-home">返回首页</a>
+    </div>
+    
+    <!-- 推文7详情：英才班早晚奶源计划实施 -->
+    <div id="article7" class="article-page">
+        <div class="article-header">
+            <h1 class="article-title">英才班早晚奶源计划正式实施</h1>
+            <div class="article-meta">
+                <span>2023年9月1日</span>
+                <span>青苗中学后勤保障中心</span>
+            </div>
+        </div>
+        <div class="article-content">
+            <p>本学期起，青苗中学英才班学生每天早晚两餐固定供应优质牛奶，这是学校营养补给计划的重要组成部分。</p>
+            
+            <h4>计划目标</h4>
+            <ul>
+                <li>重点补充蛋白质与钙质</li>
+                <li>提升学生记忆力与抗压能力</li>
+                <li>加速体能恢复速度</li>
+                <li>为高强度脑力训练提供充足营养支持</li>
+            </ul>
+            
+            <h4>实施细节</h4>
+            <p>牛奶供应时间为：早上7:00-7:30，晚上21:30-22:00。请英才班学生按时到指定地点领取。</p>
+            
+            <h4>注意事项</h4>
+            <ol>
+                <li>请按时领取并在指定区域饮用</li>
+                <li>饮用后请将空盒压平投入指定回收箱</li>
+                <li>严禁浪费或丢弃牛奶</li>
+                <li>学校将进行环保与纪律考评</li>
+            </ol>
+            
+            <p>青苗中学始终相信：适宜的饮食是对学习最基础的支持。我们坚持用科学配餐守护成长。</p>
+            
+            <div class="article-tags">
+                <span class="notice-tag">#英才班</span>
+                <span class="notice-tag">#营养补给</span>
+                <span class="notice-tag">#牛奶计划</span>
+            </div>
+        </div>
+        <a href="#" class="back-to-home">返回首页</a>
+    </div>
+    
+    <!-- 推文8详情："英材良品"罐头正式上线 -->
+    <div id="article8" class="article-page">
+        <div class="article-header">
+            <h1 class="article-title">"英材良品"系列营养罐头正式上线</h1>
+            <div class="article-meta">
+                <span>2023年9月3日</span>
+                <span>青苗中学食堂管理部</span>
+            </div>
+        </div>
+        <div class="article-content">
+            <p>青苗班三餐配备学校自主研发的"英材良品"特制营养膳食，原材料来自学校专属青苗农场。</p>
+            
+            <h4>产品特点</h4>
+            <ul>
+                <li>标准化配方确保每日必需营养摄入</li>
+                <li>原材料来自学校专属青苗农场，绿色安全</li>
+                <li>满足日常学习生活所需</li>
+                <li>营养均衡一步到位</li>
+            </ul>
+            
+            <h4>供应安排</h4>
+            <p>青苗班学生三餐均可在食堂指定窗口领取"英材良品"系列营养罐头，每人每日标准配给。</p>
+            
+            <h4>全程营养监控</h4>
+            <p>该膳食方案配合校园营养管理平台运行，学生摄入数据将同步至个人健康档案。校医室与食堂营养师将定期评估学生体质变化，动态优化配餐结构。</p>
+            
+            <p>青苗中学以差异化方案回应不同需求，让每位学生都能在适合自己的节奏中，稳步前行，健康成长。</p>
+            
+            <div class="article-tags">
+                <span class="notice-tag">#英材良品</span>
+                <span class="notice-tag">#营养罐头</span>
+                <span class="notice-tag">#校园饮食</span>
+            </div>
+        </div>
+        <a href="#" class="back-to-home">返回首页</a>
+    </div>
+
+    <!-- 青苗论坛-幼苗共育计划讨论 -->
+    <div id="detail-forum-buddy" class="article-page">
+        <div class="article-header">
+            <h1 class="article-title">青苗论坛：真是不懂幼苗共育计划存在的意义！</h1>
+            <div class="article-meta">
+                <span>2024-05-27</span>
+                <span>青苗论坛学习交流区</span>
+            </div>
+        </div>
+        <div class="article-content">
+            <p><strong>主题：</strong>真是不懂幼苗共育计划存在的意义！</p>
+            <p><strong>发帖人：</strong>匿名用户</p>
+            <p><strong>发帖时间：</strong>2024-05-27 22:15</p>
+            
+            <p>学校这个强制一对一配对的"幼苗共育"制度真的好奇怪。我的搭子是青苗班的，相处一个月了，总觉得哪里不太对劲。</p>
+            
+            <p>他总是在模仿我------我转笔的方式、推眼镜的小动作，甚至我感冒咳嗽的节奏。上周我说了句"这道题好难"，第二天他见到我第一句话就是"这道题好难"，连语气都一模一样。</p>
+            
+            <p>更诡异的是昨天，我不小心把水洒在笔记本上，他盯着那块水渍看了很久，然后轻声说："这个意外数据很有用。"</p>
+            
+            <p>是我太敏感了吗？</p>
+            
+            <hr>
+            
+            <div class="forum-replies">
+                <div class="reply-item">
+                    <p><strong>1楼：</strong>匿名用户</p>
+                    <p><strong>回复时间：</strong>2024-05-27 22:20</p>
+                    <p>你不是一个人！我的搭子会偷偷记录我每天去几次洗手间、午餐吃了什么。问她为什么记，她就说："需要完整数据才能好好成长。"</p>
+                </div>
+                
+                <div class="reply-item">
+                    <p><strong>2楼：</strong>QM231203597</p>
+                    <p><strong>回复时间：</strong>2024-05-27 22:22</p>
+                    <p>我们在学习怎么成为更好的人呀。</p>
+                </div>
+                
+                <div class="reply-item">
+                    <p><strong>3楼：</strong>匿名用户</p>
+                    <p><strong>回复时间：</strong>2024-05-27 22:25</p>
+                    <p>回复2楼：你们是在学习解题思路，还是在学习......"成为我们"？</p>
+                </div>
+                
+                <div class="reply-item">
+                    <p><strong>4楼：</strong>QM240713894</p>
+                    <p><strong>回复时间：</strong>2024-05-27 22:28</p>
+                    <p>成长需要模板。没有模板的话，我们永远都是空白的。</p>
+                </div>
+                
+                <div class="reply-item">
+                    <p><strong>5楼：</strong>匿名用户</p>
+                    <p><strong>回复时间：</strong>2024-05-27 22:30</p>
+                    <p>今天班主任说，下学期初会有"同步度评估"。这个词让我后背发凉......</p>
+                </div>
+                
+                <div class="reply-item">
+                    <p><strong>6楼：</strong>QM230826673</p>
+                    <p><strong>回复时间：</strong>2024-05-27 22:33</p>
+                    <p>别担心，当同步完成的时候，就不会有英才班和青苗班的区别了。我们都会成为"完整的学生"。</p>
+                </div>
+                
+                <div class="reply-item">
+                    <p><strong>7楼：</strong>学习搭档促进委员（官方账号）</p>
+                    <p><strong>回复时间：</strong>2024-05-27 22:35</p>
+                    <p>请同学们以积极心态看待互助计划。一对一搭子是为了促进共同进步，所谓"同步"只是教学评估的普通术语。请大家停止散布不实猜测。</p>
+                </div>
+                
+                <div class="reply-item">
+                    <p><strong>8楼：</strong>匿名用户</p>
+                    <p><strong>回复时间：</strong>2024-05-27 22:40</p>
+                    <p>我偷偷看到搭子的笔记本，里面密密麻麻记录着我的事情，最后一页写着："第47号模板，同步进度：72%。</p>
+                </div>
+                
+                <div class="reply-item">
+                    <p><strong>9楼：</strong>QM231031645</p>
+                    <p><strong>回复时间：</strong>2024-05-27 22:45</p>
+                    <p>回复8楼：你不该看那个的。现在进度要重新校准了。</p>
+                </div>
+                
+                <div class="reply-item">
+                    <p><strong>10楼：</strong>楼主 匿名用户</p>
+                    <p><strong>回复时间：</strong>2024-05-27 22:50</p>
+                    <p>"取代"是什么意思？有人知道吗？我有点害怕。</p>
+                </div>
+                
+                <div class="reply-item">
+                    <p><strong>11楼：</strong>系统提示</p>
+                    <p><strong>回复时间：</strong>2024-05-27 23:05</p>
+                    <p><strong>本话题讨论方向偏离正轨，已进行部分内容过滤。青苗中学始终致力于为学生提供最佳成长环境，请勿过度解读教学安排。</strong></p>
+                </div>
+                
+                <div class="reply-item">
+                    <p><strong>12楼：</strong>（该回复已被隐藏）</p>
+                </div>
+                
+                <div class="reply-item">
+                    <p><strong>13楼：</strong>（该回复已被隐藏）</p>
+                </div>
+                
+                <div class="reply-item">
+                    <p><strong>14楼：</strong>匿名用户</p>
+                    <p><strong>回复时间：</strong>2024-05-27 23:20</p>
+                    <p>楼主，如果你的搭子开始用你的笔迹写字，记得晚上别睡太熟。</p>
+                </div>
+                
+                <div class="reply-item locked">
+                    <p><strong>本帖已被管理员锁定，无法回复。</strong></p>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="back-to-home">返回首页</a>
+    </div>
+
+    <!-- 青苗论坛-英材罐头讨论 -->
+    <div id="detail-forum-can-food" class="article-page">
+        <div class="article-header">
+            <h1 class="article-title">青苗论坛：有谁知道学校英材良品的罐头在哪能买到吗？</h1>
+            <div class="article-meta">
+                <span>2024-04-20</span>
+                <span>青苗论坛校园生活区</span>
+            </div>
+        </div>
+        <div class="article-content">
+            <p><strong>主题：</strong>有谁知道学校英材良品的罐头在哪能买到吗？</p>
+            <p><strong>发帖人：</strong>楼主 好奇猫</p>
+            <p><strong>发帖时间：</strong>2024-04-20 21:03</p>
+            
+            <p>如题！每个月劳动课都在青苗农场忙活，但每次收获的蔬菜水果都被收走做成罐头了，包装上印着"英材良品"。作为英才班的人，我从来没吃过这罐头，我看青苗班同学经常拿罐头当三餐，连免费牛奶都没有......突然好奇罐头到底是啥味道，有没有人知道在哪能买到？或者有普通班的同学能分我一罐尝尝？</p>
+             <div class="article-image-container"> <div class="article-image" onclick="openImageZoom('https://i.postimg.cc/TPrjM4XC/204c9b257f26e4b32e697dbd16fccd40.jpg')"> <img src="https://i.postimg.cc/TPrjM4XC/204c9b257f26e4b32e697dbd16fccd40.jpg" alt="英材良品罐头实物图"> </div> <p class="image-caption">英材良品罐头实物图（点击放大）</p> </div> 
+			 
+            <hr>
+            
+            <div class="forum-replies">
+                <div class="reply-item">
+                    <p><strong>1楼：</strong>QM231209765</p>
+                    <p><strong>回复时间：</strong>2024-04-20 21:10</p>
+                    <p>楼主凡尔赛是吧？我们天天吃罐头都快吃吐了，你还想买？不过说实话，罐头味道还行，就是吃久了有点腻，感觉肉质特别嫩，像蘑菇但又带点腥甜......</p>
+                </div>
+                
+                <div class="reply-item">
+                    <p><strong>2楼：</strong>食堂阿姨我恨你</p>
+                    <p><strong>回复时间：</strong>2024-04-20 21:15</p>
+                    <p>罐头都是食堂统一发的啊！每天午餐窗口旁边有个小推车，青苗班凭学生证领一罐。但英才班不能拿，阿姨说"你们有更好的营养餐"。话说劳动课真的累死人，上次我去农场挖土豆，挖出来的根须长得像手指头，老师还说是什么新品种......</p>
+                </div>
+                
+                <div class="reply-item">
+                    <p><strong>3楼：</strong>匿名用户（校内职工）</p>
+                    <p><strong>回复时间：</strong>2024-04-20 21:22</p>
+                    <p>罐头是食堂后厨加工的，原料全部来自青苗农场。不过建议别打听太多，学校规定不同班级膳食搭配是"科学营养计划"，英才班吃新鲜菜是为了保持思维活跃。</p>
+                </div>
+                
+                <div class="reply-item">
+                    <p><strong>4楼：</strong>看破不说破</p>
+                    <p><strong>回复时间：</strong>2024-04-20 21:30</p>
+                    <p>回复2楼：你也注意到那些"植物"奇怪了？我上次摘西红柿，藤蔓扯不断，里面还有暗红色汁液，像血一样黏糊糊的。而且为啥青苗班只能吃罐头？我怀疑农场根本不是种菜......</p>
+                </div>
+                
+                <div class="reply-item">
+                    <p><strong>5楼：</strong>楼主 好奇猫</p>
+                    <p><strong>回复时间：</strong>2024-04-20 21:35</p>
+                    <p>回复4楼：等等，你说得我有点发毛......</p>
+                </div>
+                
+                <div class="reply-item">
+                    <p><strong>6楼：</strong>匿名用户</p>
+                    <p><strong>回复时间：</strong>2024-04-20 21:50</p>
+                    <p>回复楼主：罐头不对外销售，只供应青苗班。但如果你真想试试，周五下午食堂仓库会补货，趁阿姨清点时悄悄拿一罐......不过别怪我没提醒，有些事不知道比较好。</p>
+                </div>
+                
+                <div class="reply-item">
+                    <p><strong>7楼：</strong>劳动课受害者</p>
+                    <p><strong>回复时间：</strong>2024-04-20 22:01</p>
+                    <p>农场土里经常埋着"肥料袋"，闻起来像消毒水混着铁锈味。有次我不小心划破手，血滴在土里，老师立刻把我拉走了，还说"你的血pH值不适合植物生长"......</p>
+                </div>
+                
+                <div class="reply-item">
+                    <p><strong>8楼：</strong>楼主 好奇猫</p>
+                    <p><strong>回复时间：</strong>2024-04-20 22:15</p>
+                    <p>回复7楼：谢了，但我现在不敢试了......</p>
+                </div>
+                
+                <div class="reply-item">
+                    <p><strong>9楼：</strong>系统提示</p>
+                    <p><strong>回复时间：</strong>2024-04-20 22:20</p>
+                    <p><strong>本帖涉及不实信息，已被管理员部分隐藏。请大家专注学习，勿传播校园谣言。</strong></p>
+                </div>
+                
+                <div class="reply-item locked">
+                    <p><strong>（本帖已锁定）</strong></p>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="back-to-home">返回首页</a>
+    </div>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                🌱
+            </div>
+            <h3>青苗中学</h3>
+            <p>地址：武阳市青苗路1号 | 电话：027-12345678 | 邮箱：info@qingmiao.edu.cn</p>
+            <p>版权所有 © 2025 青苗中学</p>
+            <div class="copyright">
+                <p>每一株青苗，终将成材</p>
+            </div>
+            <div class="disclaimer">
+                <p>※ 声明：本网站内容仅为虚拟游戏场景，与实际学校、人物、事件无关，仅供娱乐体验。</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // 全局变量
+        let currentImageScale = 1;
+        let imageOffsetX = 0;
+        let imageOffsetY = 0;
+        let isDragging = false;
+        let dragStartX = 0;
+        let dragStartY = 0;
+        
+        function openImageZoom(src) {
+            // 创建遮罩层
+            const overlay = document.createElement('div');
+            overlay.className = 'image-overlay';
+
+            // 创建放大图片容器
+            const imageContainer = document.createElement('div');
+            imageContainer.className = 'image-glow';
+
+            // 创建放大图片
+            const zoomImg = document.createElement('img');
+            zoomImg.src = src;
+            zoomImg.className = 'zoomable-image glow-border';
+
+            imageContainer.appendChild(zoomImg);
+            overlay.appendChild(imageContainer);
+            document.body.appendChild(overlay);
+
+            // 添加红色泛光特效
+            setTimeout(() => {
+                imageContainer.classList.add('active');
+            }, 100);
+
+            // 重置缩放和位置
+            currentImageScale = 1;
+            imageOffsetX = 0;
+            imageOffsetY = 0;
+            updateImageTransform(zoomImg);
+
+            // 鼠标滚轮缩放
+            overlay.addEventListener('wheel', function(e) {
+                e.preventDefault();
+                const rect = zoomImg.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+        
+                const zoomIntensity = 0.1;
+                const oldScale = currentImageScale;
+                const delta = e.deltaY > 0 ? -zoomIntensity : zoomIntensity;
+                currentImageScale = Math.max(0.5, Math.min(5, currentImageScale + delta));
+        
+                // 调整位置以保持焦点不变
+                const scaleRatio = currentImageScale / oldScale;
+                imageOffsetX = x - (x - imageOffsetX) * scaleRatio;
+                imageOffsetY = y - (y - imageOffsetY) * scaleRatio;
+        
+                updateImageTransform(zoomImg);
+        
+                // 根据缩放级别调整泛光强度
+                updateGlowIntensity(currentImageScale, imageContainer);
+            });
+
+            // 拖拽功能
+            zoomImg.addEventListener('mousedown', function(e) {
+                isDragging = true;
+                dragStartX = e.clientX - imageOffsetX;
+                dragStartY = e.clientY - imageOffsetY;
+                zoomImg.style.cursor = 'grabbing';
+                e.preventDefault();
+            });
+
+            document.addEventListener('mousemove', function(e) {
+               if (isDragging) {
+                    imageOffsetX = e.clientX - dragStartX;
+                    imageOffsetY = e.clientY - dragStartY;
+                    updateImageTransform(zoomImg);
+                }
+            });
+
+            document.addEventListener('mouseup', function() {
+                isDragging = false;
+                zoomImg.style.cursor = 'grab';
+            });
+
+            // 点击关闭
+            overlay.addEventListener('click', function(e) {
+                if (e.target === overlay || e.target === imageContainer) {
+                    // 移除泛光特效
+                    imageContainer.classList.remove('active');
+                    setTimeout(() => {
+                        if (document.body.contains(overlay)) {
+                            document.body.removeChild(overlay);
+                        }
+                    }, 300);
+                }
+            });
+        }
+
+        // 更新图片变换
+        function updateImageTransform(img) {
+            img.style.transform = `translate(${imageOffsetX}px, ${imageOffsetY}px) scale(${currentImageScale})`;
+        }
+
+        // 根据缩放级别调整泛光强度
+        function updateGlowIntensity(scale, container) {
+            const beforeElement = container.querySelector('.image-glow::before') || 
+                         container.style;
+    
+            // 缩放越大，泛光越强
+            const glowIntensity = Math.min(1, (scale - 0.5) / 4.5);
+            const glowOpacity = 0.3 + (glowIntensity * 0.5);
+            const glowBlur = 20 + (glowIntensity * 15);
+    
+            // 更新CSS变量
+            container.style.setProperty('--glow-opacity', glowOpacity);
+            container.style.setProperty('--glow-blur', `${glowBlur}px`);
+    
+            // 动态更新伪元素样式
+            if (container.style) {
+                const pseudoStyle = `
+                    opacity: ${glowOpacity};
+                    filter: blur(${glowBlur}px);
+        `;
+                container.setAttribute('data-glow', pseudoStyle);
+            }
+        }
+        
+        // 搜索数据
+        const searchData = [
+            // 林昭相关
+            {
+                keywords: ['林昭'],
+                title: '青苗中学2025年度秋季学期自主招生考试学生成绩单-林昭',
+                description: '林昭同学的自主招生考试成绩单，包含各科分数和排名信息',
+                target: 'detail-linzhao-score',
+                date: '2025年7月20日'
+            },
+            {
+                keywords: ['林昭'],
+                title: '青苗中学自主招生学生体检报告单-林昭',
+                description: '林昭同学的入学体检报告，包含各项健康指标',
+                target: 'detail-linzhao-health',
+                date: '2025年7月25日'
+            },
+            // 英才班相关
+            {
+                keywords: ['英才班'],
+                title: '2510班-青苗中学英才班分班表',
+                description: '青苗中学英才班学生名单',
+                target: 'detail-yingcaiban',
+                date: '2025年8月10日'
+            },
+            // 青苗班相关
+            {
+                keywords: ['青苗班'],
+                title: '2501班-青苗中学青苗班分班表',
+                description: '青苗中学青苗班学生名单',
+                target: 'detail-qingmiaoban',
+                date: '2025年8月10日'
+            },
+            // 林又相关
+            {
+                keywords: ['林又'],
+                title: '青苗中学2023年度秋季学期自主招生考试学生成绩单-林又',
+                description: '林又同学的自主招生考试成绩单',
+                target: 'detail-linyou-score',
+                date: '2023年7月20日'
+            },
+            {
+                keywords: ['林又'],
+                title: '青苗中学自主招生学生体检报告单-林又',
+                description: '林又同学的入学体检报告',
+                target: 'detail-linyou-health',
+                date: '2023年7月26日'
+            },
+            // 牛奶相关
+            {
+                keywords: ['学生手册', '牛奶'],
+                title: '青苗中学学生手册',
+                description: '青苗中学学生行为规范和管理制度',
+                target: 'detail-student-manual',
+                date: '2025年8月1日'
+            },
+            // 王梅相关
+            {
+                keywords: ['王梅', '宿舍管理员'],
+                title: '青苗中学优秀宿舍管理员表彰推文',
+                description: '王梅同志先进事迹及表彰决定',
+                target: 'detail-wangmei',
+                date: '2025年6月15日'
+            },
+            // YC230617001相关
+            {
+                keywords: ['YC230617001'],
+                title: '青苗中学1号1楼宿舍楼储物柜分配表',
+                description: '1号宿舍楼储物柜分配情况',
+                target: 'detail-yc230617001',
+                date: '2025年9月11日'
+            },
+			 // YC251123489相关
+            {
+                keywords: ['YC251123489'],
+                title: '青苗中学1号3楼宿舍楼储物柜分配表',
+                description: '1号宿舍楼储物柜分配情况',
+                target: 'detail-yc251123489',
+                date: '2025年9月11日'
+            },
+            {
+                keywords: ['YC230617001', '官大华', '白目目', '容易'],
+                title: '实验楼厕所斗殴处分记录',
+                description: '官大华、白目目、容易三位学生的违纪处分记录',
+                target: 'detail-fight-record',
+                date: '2024年12月15日'
+            },
+            // 食堂相关
+            {
+                keywords: ['食堂', '食材','英材良品' ],
+                title: '青苗中学食堂食材配货单',
+                description: '食堂每周食材供应清单',
+                target: 'detail-canteen',
+                date: '2025年9月10日'
+            },
+            // 校医院相关
+            {
+                keywords: ['校医院'],
+                title: '青苗中学校医院官网',
+                description: '校医院服务介绍及官网链接',
+                target: 'detail-hospital',
+                date: '2025年9月1日'
+            },
+            // 张晓苗相关
+            {
+                keywords: [ '张晓苗', '劳动教育', '劳动教育手册'  ],
+                title: '青苗中学劳动教育指导手册',
+                description: '青苗中学劳动教育的目标、内容、实施和安全注意事项',
+                target: 'detail-zhangxiaomiao-labor',
+                date: '2025年8月30日'
+            },
+            // 青苗论坛相关
+            {
+                keywords: [ '张晓苗'],
+                title: '关于我校23级英才班学生安全事件的调查报告',
+                description: '2025年5月18日23级英才班安全事件的详细调查报告（加密文件）',
+                target: 'detail-zhangxiaomiao-report',
+                date: '2025年4月15日'
+            },
+            // 青苗论坛
+            {
+                keywords: ['青苗论坛'],
+                title: '青苗论坛帖子：真是不懂幼苗共育计划的存在的意义！',
+                description: '关于学校强制配对的"成长搭子"制度的论坛讨论',
+                target: 'detail-forum-buddy',
+                date: '2024-05-27'
+            },
+            {
+                keywords: ['青苗论坛', '英材良品'],
+                title: '青苗论坛帖子：有谁知道学校英材良品的罐头在哪能买到吗？',
+                description: '关于学校农场和英材良品罐头的论坛讨论',
+                target: 'detail-forum-can-food',
+                date: '2024-04-20'
+            },
+        ];
+        
+        // 导航栏切换效果
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // 移除所有活动状态
+                document.querySelectorAll('.nav-item').forEach(nav => {
+                    nav.classList.remove('active');
+                });
+                
+                // 添加当前活动状态
+                this.classList.add('active');
+                
+                // 特殊功能处理
+                if (this.textContent.includes('在线报名')) {
+                    alert('在线报名功能暂停使用中。');
+                }
+                
+                if (this.textContent.includes('青苗论坛')) {
+                    // 搜索青苗论坛相关帖子
+                    const searchInput = document.getElementById('searchInput');
+                    searchInput.value = '青苗论坛';
+                    performSearch();
+                    return;
+                }
+
+                if (this.textContent.includes('校友工作')) {
+                    alert('校友工作功能正在建设中，敬请期待。');
+                }
+                            
+                if (this.textContent.includes('教学科研')) {
+                    alert('教学科研功能正在建设中，敬请期待。');
+                }
+
+                if (this.textContent.includes('招生工作')) {
+                    alert('招生工作功能暂停使用中。');
+                }
+            });
+        });
+        
+        // 查看详情功能
+        document.querySelectorAll('.detail-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('data-target');
+                
+                // 隐藏主页内容
+                document.getElementById('mainContent').style.display = 'none';
+                document.querySelector('.header-banner').style.display = 'none';
+                document.querySelector('.main-nav').style.display = 'none';
+                document.querySelector('footer').style.display = 'none';
+                
+                // 隐藏所有文章页面
+                document.querySelectorAll('.article-page').forEach(page => {
+                    page.style.display = 'none';
+                });
+                
+                // 显示对应的文章页面
+                document.getElementById(targetId).style.display = 'block';
+                
+                // 滚动到顶部
+                window.scrollTo(0, 0);
+            });
+        });
+        
+        // 返回首页功能
+        document.body.addEventListener('click', function(e) {
+            if (e.target.classList.contains('back-to-home')) {
+                e.preventDefault();
+                document.querySelectorAll('.article-page').forEach(page => {
+                    page.style.display = 'none';
+                });
+                document.getElementById('mainContent').style.display = 'block';
+                document.querySelector('.header-banner').style.display = 'block';
+                document.querySelector('.main-nav').style.display = 'block';
+                document.querySelector('footer').style.display = 'block';
+                window.scrollTo(0, 0);
+            }
+        });
+        
+        // 搜索功能
+        document.getElementById('searchButton').addEventListener('click', performSearch);
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+        
+        function performSearch() {
+            const searchInput = document.getElementById('searchInput');
+            const query = searchInput.value.trim().toLowerCase();
+            
+            if (!query) {
+                alert('请输入搜索关键词');
+                return;
+            }
+            
+            // 查找匹配的搜索结果
+            const results = searchData.filter(item => {
+                return item.keywords.some(keyword => 
+                    keyword.toLowerCase().includes(query) || query.includes(keyword.toLowerCase())
+                );
+            });
+            
+            // 隐藏主页内容
+            document.getElementById('mainContent').style.display = 'none';
+            document.querySelector('.header-banner').style.display = 'none';
+            document.querySelector('.main-nav').style.display = 'none';
+            document.querySelector('footer').style.display = 'none';
+            
+            // 隐藏所有文章页面
+            document.querySelectorAll('.article-page').forEach(page => {
+                page.style.display = 'none';
+            });
+            
+            // 创建搜索结果页面
+            const searchResultsPage = document.createElement('div');
+            searchResultsPage.className = 'search-results-page';
+            
+            let resultsHTML = '';
+            
+            if (results.length > 0) {
+                resultsHTML = `
+                    <div class="search-header">
+                        <h1 class="search-title">搜索结果</h1>
+                        <p class="search-query">搜索关键词：<strong>${query}</strong></p>
+                        <p class="results-count">找到 ${results.length} 条相关结果</p>
+                    </div>
+                    
+                    <div class="search-results">
+                        <ul class="search-result-list">
+                `;
+                
+                results.forEach(result => {
+                    resultsHTML += `
+                        <li class="search-result-item">
+                            <a href="#" class="search-result-link" data-target="${result.target}">
+                                ${result.title}
+                            </a>
+                            <div class="result-date">${result.date}</div>
+                            <div class="result-description">${result.description}</div>
+                        </li>
+                    `;
+                });
+                
+                resultsHTML += `
+                        </ul>
+                    </div>
+                `;
+            } else {
+                resultsHTML = `
+                    <div class="search-header">
+                        <h1 class="search-title">搜索结果</h1>
+                        <p class="search-query">搜索关键词：<strong>${query}</strong></p>
+                    </div>
+                    
+                    <div class="search-results">
+                        <div class="no-results">
+                            <div class="no-results-icon">🔍</div>
+                            <h3>没有查找到与"${query}"相关的信息</h3>
+                            <p>请尝试其他关键词搜索</p>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            resultsHTML += `<a href="#" class="back-to-home">返回首页</a>`;
+            
+            searchResultsPage.innerHTML = resultsHTML;
+            
+            // 移除之前的搜索结果页面
+            const oldSearchPage = document.querySelector('.search-results-page');
+            if (oldSearchPage) {
+                oldSearchPage.remove();
+            }
+            
+            document.body.appendChild(searchResultsPage);
+            searchResultsPage.style.display = 'block';
+            
+            // 添加搜索结果点击事件
+            searchResultsPage.querySelectorAll('.search-result-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('data-target');
+                    
+                    // 隐藏搜索结果页面
+                    searchResultsPage.style.display = 'none';
+                    
+                    // 隐藏所有文章页面
+                    document.querySelectorAll('.article-page').forEach(page => {
+                        page.style.display = 'none';
+                    });
+                    
+                    // 显示对应的详情页面
+                    const targetPage = document.getElementById(targetId);
+                    if (targetPage && targetPage.classList.contains('article-page')) {
+                        targetPage.style.display = 'block';
+                    } else {
+                        // 如果页面不存在，显示提示并返回搜索结果
+                        alert('该详情页面无法访问，请稍后再试！');
+                        searchResultsPage.style.display = 'block';
+                    }
+                    
+                    // 滚动到顶部
+                    window.scrollTo(0, 0);
+                });
+            });
+            
+            // 添加返回首页功能
+            searchResultsPage.querySelector('.back-to-home').addEventListener('click', function(e) {
+                e.preventDefault();
+                document.body.removeChild(searchResultsPage);
+                document.getElementById('mainContent').style.display = 'block';
+                document.querySelector('.header-banner').style.display = 'block';
+                document.querySelector('.main-nav').style.display = 'block';
+                document.querySelector('footer').style.display = 'block';
+            });
+            
+            // 滚动到顶部
+            window.scrollTo(0, 0);
+        }
+        
+        // 加密文件密码检查
+        function checkReportPassword() {
+            const password = document.getElementById('reportPassword').value.trim();
+            const resultDiv = document.getElementById('passwordResult');
+            const encryptedContent = document.getElementById('encryptedContent');
+            if (password === '0630') {
+                resultDiv.innerHTML = '<p style="color: green; font-weight: bold;">✓ 解密成功！正在加载内容...</p>';
+                resultDiv.style.display = 'block';
+                setTimeout(() => {
+                    encryptedContent.style.display = 'block';
+                    resultDiv.innerHTML = '<p style="color: green; font-weight: bold;">✅ 文件已成功解密，内容已显示。</p>';
+                }, 1000);
+            } else {
+                resultDiv.innerHTML = '<p style="color: red; font-weight: bold;">✗ 密码错误，请重新输入。</p>';
+                resultDiv.style.display = 'block';
+                document.getElementById('reportPassword').value = ''; // 清空输入框
+            }
+        }
+
+        document.getElementById('searchInput').addEventListener('focus', function() {
+            if (!this.dataset.exampleAdded) {
+                this.placeholder = '例如：林昭...';
+                this.dataset.exampleAdded = true;
+            }
+        });
+        
+        document.getElementById('searchInput').addEventListener('blur', function() {
+            if (this.value === '') {
+                this.placeholder = '搜索学校通知、文件、人员...';
+            }
+        });
+
+        // 检查密码并解锁下一张图片
+        function checkPassword(pageNum) {
+            const passwordInputs = [
+                { inputId: 'passwordInput1', correct: '7205', resultId: 'passwordResult1', nextContainer: 'imageContainer2', nextSection: 'passwordSection2' },
+                { inputId: 'passwordInput2', correct: 'NASAL', resultId: 'passwordResult2', nextContainer: 'imageContainer3', nextSection: 'passwordSection3' }
+            ];
+
+            const config = passwordInputs[pageNum - 1];
+            const input = document.getElementById(config.inputId);
+            const resultDiv = document.getElementById(config.resultId);
+            const password = input.value.trim();
+
+            if (password === config.correct) {
+                resultDiv.innerHTML = '<p style="color: green; font-weight: bold;">✓ 解锁成功！正在加载下一页...</p>';
+                resultDiv.style.display = 'block';
+
+                // 隐藏当前密码框，显示下一张图片和其密码框
+                document.getElementById(config.nextContainer).style.display = 'block';
+                if (config.nextSection !== 'passwordSection4') {
+                    document.getElementById(config.nextSection).style.display = 'block';
+                }
+
+                // 清空输入框
+                input.value = '';
+
+                // 延迟隐藏结果提示
+                setTimeout(() => {
+                    resultDiv.innerHTML = '<p style="color: green; font-weight: bold;">✅ 已成功解锁，继续查看下一页内容。</p>';
+                }, 1000);
+            } else {
+                resultDiv.innerHTML = '<p style="color: red; font-weight: bold;">✗ 密码错误，请重新输入。</p>';
+                resultDiv.style.display = 'block';
+                input.value = ''; // 清空输入框
+            }
+        }
+    </script>
+</body>
+</html>
